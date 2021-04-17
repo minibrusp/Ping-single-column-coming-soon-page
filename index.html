@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="src/css/styles.css">
+  <script src="src/js/scripts.js"></script>
+  <script src="https://kit.fontawesome.com/cef1e7091d.js" crossorigin="anonymous"></script>
   
   <title>Frontend Mentor | Ping coming soon page</title>
 
@@ -16,19 +19,49 @@
 </head>
 <body>
 
-  We are launching soon!
+  <header>
+    <h1 class="logo">
+      <a href="index.html" title="to home page">
+        <img src="src/images/logo.svg" alt="Ping logo" class="header__logo">
+      </a>
+    </h1>
+  </header>
 
-  Subscribe and get notified
-
-  Notify Me
-
-  &copy; Copyright Ping. All rights reserved.
+  <main class="promotional">
+    <header>
+      <h2><span>We are launching</span> soon!</h2>
+      <p>Subscribe and get notified</p>
+    </header>
+    <form action="submit" class="promotional__form">
+      <input type="email" class="email" id="email" alt="text area form email" title="email" placeholder="Your email address...">
+      <span>Please provide a valid email address</span>
+      <button name="submit" class="submit" id="submit">Notify Me</button>
+    </form>
+    <footer>
+      <img src="src/images/illustration-dashboard.png" class="dashboard__illustration" alt="dashboard illustration" title="dashboard illustration">
+    </footer>
+  </main>
 
   <footer>
+    <div class="social__icons">
+      <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+      <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+    </div>
+
+    <p>&copy; Copyright Ping. All rights reserved.</p>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/minibrusp" target="_blank">XIII</a>.
     </p>
-  </footer>
+  </footer> 
+
+  
+
+  
+
+  
+
+
 </body>
 </html>
