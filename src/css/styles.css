@@ -149,7 +149,7 @@ main.promotional p {
 }
 
 .social__icons a:hover {
-   background-color: var(--Secondary-Pale-Blue);
+   background-color: var(--Primary-Blue);
    color: #ffffff;
 }
 
