@@ -35,6 +35,7 @@ body {
 h1 .header__logo {
    width: 20%;
    margin: 0 auto;
+   max-width: 3.85rem;
 }
 
 h2 {
@@ -61,7 +62,7 @@ button {
 }
 
 button:hover {
-   background-color: var(--Secondary-Pale-Blue);
+   background-color: hsl(223deg 87% 63% / 80%);
 }
 
 input {
@@ -83,6 +84,7 @@ input::placeholder {
 
 .dashboard__illustration {
    width: 100%;
+   max-width: 21.65rem;
 }
 
 main.promotional {
@@ -100,11 +102,14 @@ main.promotional p {
    display: flex;
    flex-direction: column;
    height: 131px;
+   align-items: center;
 }
 
 .promotional__form input {
    margin-bottom: 0.5rem;
    z-index: 1;
+   max-width: 21rem;
+   width: 100%;
 }
 
 .promotional__form span {
@@ -116,8 +121,14 @@ main.promotional p {
    transform: translateY(-36px);
    height: 0px;
    margin: 0;
-   transition: all 1s;
+   opacity: 0;
+   transition: all .5s;
    z-index: 0;
+}
+
+.promotional__form button {
+   max-width: 21rem;
+   width: 100%;
 }
 
 .social__icons a {
@@ -153,6 +164,20 @@ footer p {
    color: var(--Neutral-Gray);
 }
 
+.attribution {
+   font-size: 11px;
+   text-align: center;
+}
+
+.attribution a {
+   color: hsl(228, 45%, 44%);
+   text-decoration: none;
+}
+
+.attribution a:hover {
+   color: var(--Primary-Blue);
+}
+
 /* transitions  */
 
 .input--error {
@@ -162,6 +187,136 @@ footer p {
 .promotional__form .span--error {
    margin-bottom: 1.25rem;
    height: unset;
-   /* opacity: 1; */
+   opacity: 1;
    transform: translateY(0);
+}
+
+.img--success {
+   padding: 20px;
+}
+
+/* media queries  */
+
+@media screen and (min-width: 750px) {
+
+   body {
+      margin: 10vh 5vw;
+   }
+
+   main.promotional h2 {
+      font-size: 1.5rem;
+   }
+
+   main.promotional p {
+      font-size: 0.75rem;
+   }
+
+   .promotional__form {
+      display: grid;
+      grid-template-areas: "input button"
+         "error error";
+      /* max-width: 420px; */
+      max-width: 57vw;
+      margin: 1.4rem auto 1.9rem auto;
+      /* grid-template-rows: 42px 50px; */
+      height: unset;
+   }
+
+   .promotional__form input {
+      grid-area: input;
+      margin-bottom: 0;
+      height: 42px;
+      max-width: 420px;
+   }
+
+   .promotional__form button {
+      grid-area: button;
+      margin-left: 10px;
+      max-width: 175px;
+   }
+
+   .promotional__form span {
+      grid-area: error;
+      justify-self: start;
+      margin-left: 30px;
+      padding: 8px 0;
+   }
+
+   .dashboard__illustration {
+      max-width: 74%;
+   }
+}
+
+@media screen and (min-width: 1000px) {
+
+   h1 .header__logo {
+      max-width: 4.25rem;
+   }
+
+   main.promotional {
+      margin: 2.15rem 0 5.75rem 0;
+   }
+
+   main.promotional h2 {
+      font-size: 2rem;
+   }
+
+   main.promotional p {
+      font-size: 0.85rem;
+   }
+
+   .dashboard__illustration {
+      max-width: 32.5rem;
+   }
+
+   .promotional__form {
+      margin: 2.15rem auto 3.5rem auto;
+   }
+
+   .promotional__form input {
+      font-size: 0.85rem;
+      height: 50px;
+   }
+
+   .promotional__form button {
+      font-size: 0.85rem;
+      height: 50px;
+      font-weight: 400;
+      max-width: 185px;
+   }
+
+   .promotional__form span {
+      font-size: 0.7rem;
+   }
+}
+
+@media screen and (min-width: 1100px) {
+
+   body {
+      margin: 10vh 20vw;
+   }
+
+   .promotional__form {
+      max-width: 655px;
+   }
+
+}
+
+@media screen and (min-width: 1300px) {
+   main.promotional h2 {
+      font-size: 2.4rem;
+   }
+
+   main.promotional p {
+      font-size: 1rem;
+   }
+
+   .promotional__form input {
+      height: 55px;
+   }
+
+   .promotional__form button {
+      height: 55px;
+      max-width: 400px;
+   }
 }
