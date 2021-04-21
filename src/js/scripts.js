@@ -1,5 +1,3 @@
-// document.querySelector('.promotional__form span').classList.toggle('span--error');
-
 (()=> {
    console.log('Hello World');
    let promotionalEmail = document.querySelector('.promotional__form .email');
@@ -17,7 +15,6 @@
    }
 
    function resetField(event) {
-      console.log('Focused');
       promotionalEmail.classList.remove('input--error');
       errorMsg.classList.remove('span--error');
    }

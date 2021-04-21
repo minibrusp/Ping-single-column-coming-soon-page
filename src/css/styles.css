@@ -36,11 +36,13 @@ h1 .header__logo {
    width: 20%;
    margin: 0 auto;
    max-width: 3.85rem;
+   animation: logoAnimation 1s forwards, logoAnimation--goUp 1s 3s forwards;
 }
 
 h2 {
    font-size: 1.1rem;
    margin: 0;
+   animation: hideElement 1s, headerTwoAnimation 1s 1s forwards, animation--goUp 1s 3s forwards;
 }
 
 h2 span {
@@ -85,6 +87,7 @@ input::placeholder {
 .dashboard__illustration {
    width: 100%;
    max-width: 21.65rem;
+   animation: hideElement 5s, illustrationAnimation 1s 5s;
 }
 
 main.promotional {
@@ -97,6 +100,10 @@ main.promotional p {
    font-weight: 400;
 }
 
+main.promotional header p {
+   animation: hideElement 2s, promotionPAnimation 1s 2s forwards, animation--goUp 1s 3s forwards;
+}
+
 .promotional__form {
    margin: 1.4rem 0.8rem 1.9rem 0.8rem;
    display: flex;
@@ -105,11 +112,16 @@ main.promotional p {
    align-items: center;
 }
 
+.promotional__form p {
+   animation: fadeInBlinkScale 1s;
+}
+
 .promotional__form input {
    margin-bottom: 0.5rem;
    z-index: 1;
    max-width: 21rem;
    width: 100%;
+   animation: hideElement 4s, promotionalInputAnimation 1s 4s;
 }
 
 .promotional__form span {
@@ -129,6 +141,7 @@ main.promotional p {
 .promotional__form button {
    max-width: 21rem;
    width: 100%;
+   animation: hideElement 4s, promotionalButtonAnimation 1s 4s;
 }
 
 .social__icons a {
@@ -159,9 +172,28 @@ main.promotional p {
    align-items: center;
 }
 
+.social__icons a:nth-of-type(1) {
+   animation: hideElement 6s, fadeInBlinkScale 1s 6s;
+}
+
+.social__icons a:nth-of-type(2) {
+   animation: hideElement 6.5s, fadeInBlinkScale 1s 6.5s;
+}
+
+.social__icons a:nth-of-type(3) {
+   animation: hideElement 7s, fadeInBlinkScale 1s 7s;
+}
+
 footer p {
    font-size: 0.65rem;
    color: var(--Neutral-Gray);
+   animation: hideElement 8s, fadeInBlinkScale 1s 8s;
+
+
+}
+
+footer p:nth-of-type(1) {
+   animation: hideElement 8s, fadeInBlinkScale 1s 8s;
 }
 
 .attribution {
@@ -194,6 +226,105 @@ footer p {
 .img--success {
    padding: 20px;
 }
+
+
+/* animations  */
+
+@keyframes hideElement {
+   0% {
+      opacity: 0;
+   }
+
+   100% {
+      opacity: 0;
+   }
+}
+
+@keyframes animation--goUp {
+   0% {
+      transform: translateY(20vh)
+   }
+
+   100% {
+      transform: translateY(0);
+   }
+}
+
+@keyframes logoAnimation {
+   0% {
+      opacity: 0;
+      transform: translateY(20vh) scale(0);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateY(20vh) scale(3);
+   }
+}
+
+@keyframes logoAnimation--goUp {
+   0% {
+      transform: translateY(20vh) scale(3);
+   }
+
+   100% {
+      transform: translateY(0) scale(1);
+   }
+}
+
+@keyframes headerTwoAnimation {
+   0% {
+      opacity: 0;
+      transform: translateY(20vh) translateX(-80vw);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateY(20vh) translateX(0);
+   }
+}
+
+@keyframes promotionPAnimation {
+   0% {
+      opacity: 0;
+      transform: translateY(20vh) translateX(80vw);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateY(20vh) translateX(0);
+   }
+}
+
+@keyframes promotionalInputAnimation {
+   0% {
+      transform: translateX(-80vw);
+   }
+}
+
+@keyframes promotionalButtonAnimation {
+   0% {
+      transform: translateX(80vw);
+   }
+}
+
+@keyframes illustrationAnimation {
+   0% {
+      transform: rotate(1440deg) scale(0);
+   }
+}
+
+@keyframes fadeInBlinkScale {
+   0% {
+      opacity: 0;
+      transform: scale(0);
+   }
+
+   50% {
+      transform: scale(1.2);
+   }
+}
+
 
 /* media queries  */
 
